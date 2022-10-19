@@ -4,7 +4,7 @@ interface Multimedia {
 
 
     // Kiírja a konzolra a multimédia termék leírását
-    kkir(): void;
+    kiir(): void;
     toString(): string;
 }
 
@@ -17,7 +17,7 @@ class Zene implements Multimedia {
         this.hossz = hossz;
     }
 
-    kkir(): void {
+    kiir(): void {
         console.log(this.toString());
     }
     toString(): string {
@@ -42,8 +42,8 @@ class Konyv implements Multimedia {
     }
 
 
-    kkir(): void {
-        console.log(this.toString)
+    kiir(): void {
+        console.log(this.toString())
     }
     toString(): string {
         return this.#cim;
@@ -53,7 +53,7 @@ class Konyv implements Multimedia {
 
 
 let zene = new Zene('Let it go', 183);
-zene.kkir();
+zene.kiir();
 
 
 let termekek: Multimedia[] = [
@@ -61,3 +61,6 @@ let termekek: Multimedia[] = [
     new Konyv('The Lord of the Rings'),
 ];
 
+for (let termek of termekek) {
+    termek.kiir();
+}

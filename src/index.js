@@ -16,7 +16,7 @@ class Zene {
         this.cim = cim;
         this.hossz = hossz;
     }
-    kkir() {
+    kiir() {
         console.log(this.toString());
     }
     toString() {
@@ -34,8 +34,8 @@ class Konyv {
     set cim(cim) {
         __classPrivateFieldSet(this, _Konyv_cim, cim, "f");
     }
-    kkir() {
-        console.log(this.toString);
+    kiir() {
+        console.log(this.toString());
     }
     toString() {
         return __classPrivateFieldGet(this, _Konyv_cim, "f");
@@ -43,8 +43,11 @@ class Konyv {
 }
 _Konyv_cim = new WeakMap();
 let zene = new Zene('Let it go', 183);
-zene.kkir();
+zene.kiir();
 let termekek = [
     new Zene('Let it go', 183),
     new Konyv('The Lord of the Rings'),
 ];
+for (let termek of termekek) {
+    termek.kiir();
+}

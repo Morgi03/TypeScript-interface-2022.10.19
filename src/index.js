@@ -44,10 +44,35 @@ class Konyv {
 _Konyv_cim = new WeakMap();
 let zene = new Zene('Let it go', 183);
 zene.kiir();
+class Film {
+    constructor(cim, hossz) {
+        this.cim = cim;
+        this.hossz = hossz;
+    }
+    kiir() {
+        console.log(this.toString());
+    }
+    toString() {
+        return this.cim + " (" + this.hossz + " s)";
+    }
+}
+// Nem lett implementálva, de a typescript fordító felismerte!
+let f = new Film('Die hard', 18645);
 let termekek = [
     new Zene('Let it go', 183),
     new Konyv('The Lord of the Rings'),
+    new Film('Die hard', 18645),
 ];
 for (let termek of termekek) {
     termek.kiir();
 }
+let streamelhetoTermekek = [
+    new Film('Harry Potter', 2000),
+    new Zene('Sweet child of mine', 200),
+    { cim: 'Thuderstruck', hossz: 198 },
+];
+let streamelhetoTermekekType = [
+    new Film('Harry Potter', 2000),
+    new Zene('Sweet child of mine', 200),
+    { cim: 'Thuderstruck', hossz: 198 },
+];
